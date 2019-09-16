@@ -5,30 +5,28 @@
 
 template< class NODETYPE >
 class Tree
+//--- implementation for binary tree
 {
 	public:
 		Tree();
 		void insertNode( const NODETYPE & );
 		void preOrderTraversal() const;
-//		void inOrderTraversal() const;
-//		void postOrderTraversal() const;
 	private:
 		TreeNode< NODETYPE > *rootPtr;
 		void insertNodeHelper( TreeNode< NODETYPE >* &, TreeNode< NODETYPE > * );
 		void preOrderTraversalHelper( TreeNode< NODETYPE >* ) const;
-//		void preOrderHelper( const NODETYPE & );
 };
 //constructor
 template< class NODETYPE >
 Tree< NODETYPE >::Tree():rootPtr( 0 ){}
-//
+// public member function for node insertion
 template< class NODETYPE >
 void Tree< NODETYPE >::insertNode( const NODETYPE &data )
 {
 	TreeNode< NODETYPE > *nodePtr = new TreeNode< NODETYPE >( data ); //create node
 	insertNodeHelper( rootPtr, nodePtr );
 }
-//
+//utility function 
 template< class NODETYPE >
 void Tree< NODETYPE >::insertNodeHelper( TreeNode< NODETYPE >* &ptr, TreeNode< NODETYPE > *nodePtr )
 {
@@ -51,7 +49,7 @@ void Tree< NODETYPE >::insertNodeHelper( TreeNode< NODETYPE >* &ptr, TreeNode< N
 
 	}	
 }
-//
+//utility function
 template< class NODETYPE >
 void Tree< NODETYPE >::preOrderTraversal() const
 {
